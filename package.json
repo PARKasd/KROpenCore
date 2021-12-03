@@ -1,11 +1,11 @@
 {
-   "name": "OpenCore-Install-Guide",
+   "name": "KROpenCore",
    "version": "0.7.5",
    "description": "Guide to put macOS on unsupported devices",
    "main": "",
    "author": {
-      "name": "Parkasd",
-      "url": "https://github.com/parkasd"
+      "name": "PARKasd",
+      "url": "https://github.com/PARKasd"
    },
    "repository": {
       "type": "git",
