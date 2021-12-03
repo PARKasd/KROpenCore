@@ -3,6 +3,11 @@ const {
 } = require('../package')
 
 module.exports = {
+ locales: {
+        '/': {
+            lang: 'ko-KR'
+        }
+    },
     title: 'OpenCore Install Guide',
     head: [
         ['meta', {
