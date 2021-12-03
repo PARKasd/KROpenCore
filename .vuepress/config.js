@@ -55,7 +55,7 @@ module.exports = {
 
     themeConfig: {
         lastUpdated: true,
-        repo: 'https://github.com/dortania/OpenCore-Install-Guide',
+        repo: 'https://parkasd.github.io/KROpenCore/',
 		editLinks: true,
 		editLinkText: 'Help us improve this page!',
         logo: '/homepage.png',
