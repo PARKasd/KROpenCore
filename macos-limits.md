@@ -154,9 +154,9 @@ GPU 지원은 시장에 매우 많은 GPU들이 존재하기에 훨씬 더 복�
   * [Nvidia's Turing(20XX,](https://en.wikipedia.org/wiki/GeForce_20_series)[16XX)](https://en.wikipedia.org/wiki/GeForce_16_series) GPU들은 **어떠한 버전에서도 지원되지 않습니다.**
   * [Nvidia's Ampere(30XX)](https://en.wikipedia.org/wiki/GeForce_30_series) GPU들은 **어떠한 버전에서도 지원되지 않습니다.**
   * [Nvidia's Kepler(6XX,](https://en.wikipedia.org/wiki/GeForce_600_series)[7XX)](https://en.wikipedia.org/wiki/GeForce_700_series) GPU들은 macOS 11: 빅서 까지 지원됩니다.
-* Intel's [GT2+ tier](https://en.wikipedia.org/wiki/Intel_Graphics_Technology) 시리즈 내장그래픽ㄷ
-  * Ivy Bridge through Ice Lake iGPU support is covered in this guide
-    * Info on GMA series iGPUs can be found here: [GMA Patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/)
+* Intel's [GT2+ tier](https://en.wikipedia.org/wiki/Intel_Graphics_Technology) 시리즈 내장그래픽들은
+  * 아이비브릿지부터 아이스레이크 내장그래픽지원은 이 안내를 통해 지원됩니다.
+    * GMA  iGPUs 대한 정보를 알수있습니다: [GMA Patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/)
   * Note GT2 refers to the tier of iGPU, low-end GT1 iGPUs found on Pentiums, Celerons and Atoms are not supported in macOS
 
 And an important note for **Laptops with discrete GPUs**:
