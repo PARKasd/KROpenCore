@@ -157,23 +157,23 @@ GPU 지원은 시장에 매우 많은 GPU들이 존재하기에 훨씬 더 복�
 * Intel's [GT2+ tier](https://en.wikipedia.org/wiki/Intel_Graphics_Technology) 시리즈 내장그래픽들은
   * 아이비브릿지부터 아이스레이크 내장그래픽지원은 이 안내를 통해 지원됩니다.
     * GMA  iGPUs 대한 정보를 알수있습니다: [GMA Patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/)
-  * Note GT2 refers to the tier of iGPU, low-end GT1 iGPUs found on Pentiums, Celerons and Atoms are not supported in macOS
+  * 주의 GT2 는 내장그래픽의 계급을 나타내며, GT1 내장그래픽은 펜티엄에서 볼수 있으며, 셀러론과 아톰은 macOS 에서 지원하지 않습니다.
 
-And an important note for **Laptops with discrete GPUs**:
+ **dGPU를 가진 노트북** 유저에 대한 주의사항:
 
-* 90% of discrete GPUs will not work because they are wired in a configuration that macOS doesn't support (switchable graphics). With NVIDIA discrete GPUs, this is usually called Optimus. It is not possible to utilize these discrete GPUs for the internal display, so it is generally advised to disable them and power them off (will be covered later in this guide).
-* However, in some cases, the discrete GPU powers any external outputs (HDMI, mini DisplayPort, etc.), which may or may not work; in the case that it will work, you will have to keep the card on and running.
-* However, there are some laptops that rarely do not have switchable graphics, so the discrete card can be used (if supported by macOS), but the wiring and setup usually cause issues.
+* 90%의 dgpu 노트북들은 작동하지 않을것입니다. 그들은 macOS 가 지원하지 않는 방식으로 연결되어 있기때문입니다. 주로 옵티머스라 불리는 엔비디아의 dGPU로는 내장 모니터 화면을 구동시킬수 없기에 dGPU 의 전원을 끄거나, 비활성화 하는것이 권고됩니다. (이 가이드에 후술될 내용에 포함되어 있습니다).
+* 그러나, 몇몇 종류의 dGPU가 외장 출력을 담당할때, 작동할수도 있고 작동하지 않을수도 있습니다; 이경우 작동할수 있는 가능성이 있기에, dGPU를 유지해야합니다.
+* 그러나, 몇몇 노트북들은 매우 드물게 dGPU 변환 기능이 없을때, macOS에서 dGPU가 작동될수 있습니다. 그러나, GPU간 연결이 주로 문제를 일으킵니다.
 
-**For a full list of supported GPUs, see the [GPU Buyers Guide](https://dortania.github.io/GPU-Buyers-Guide/)**
+**모든 지원가능한 GPU에 대해 보자면 [GPU Buyers Guide](https://dortania.github.io/GPU-Buyers-Guide/)를 참고해주세요**
 
-::: details Intel GPU Support Chart
+::: Intel GPU 지원 목록
 
-| GPU Generation | Initial support | Last supported version | Notes |
+| GPU 세대 | 최초 지원 | 최후 지원 | 특이사항 |
 | :--- | :--- | :--- | :--- |
-| [3rd Gen GMA](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Third_generation) | 10.4.1 | 10.7.5 | [Requires 32-bit kernel and patches](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/legacy-intel/) |
+| [3rd Gen GMA](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Third_generation) | 10.4.1 | 10.7.5 | [32비트 커널과 패치가 필요합니다](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/legacy-intel/) |
 | [4th Gen GMA](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen4) | 10.5.0 | ^^ | ^^ |
-| [Arrandale(HD Graphics)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen5) | 10.6.4 | 10.13.6 | Only LVDS is supported, eDP and external outputs are not |
+| [Arrandale(HD Graphics)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen5) | 10.6.4 | 10.13.6 | LVDS만 지원되며,eDP와 외장 출력은 지원되지 않습니다. |
 | [Sandy Bridge(HD 3000)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen6) | 10.6.7 | ^^ | N/A |
 | [Ivy Bridge(HD 4000)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen7) | 10.7.3 | 11.6.1 | ^^ |
 | [Haswell(HD 4XXX, 5XXX)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen7) | 10.8.5 | <span style="color:green"> Current </span> | ^^ |
@@ -182,7 +182,7 @@ And an important note for **Laptops with discrete GPUs**:
 | [Kaby Lake(HD 6XX)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen9) | 10.12.4 | ^^ | ^^ |
 | [Coffee Lake(UHD 6XX)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen9) | 10.13.6 | ^^ | ^^ |
 | [Comet Lake(UHD 6XX)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen9) | 10.15.4 | ^^ | ^^ |
-| [Ice Lake(Gx)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen11) | 10.15.4 | ^^ | Requires `-igfxcdc` and `-igfxdvmt` in boot-args |
+| [Ice Lake(Gx)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen11) | 10.15.4 | ^^ |  `-igfxcdc`,`-igfxdvmt` boot-args에 추가해줘야 합니다. |
 | [Tiger Lake(Xe)](https://en.wikipedia.org/wiki/Intel_Xe) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> No drivers available </span> |
 | [Rocket Lake](https://en.wikipedia.org/wiki/Rocket_Lake) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> No drivers available </span> |
 
