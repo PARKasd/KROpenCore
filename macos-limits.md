@@ -37,7 +37,7 @@ CPU 지원에 대한 안내:
   - **노트북용 CPU**는 지원되지 않습니다.
   - AMD CPU는 macOS 의 **모든 기능이 지원되지 않습니다.**
 
-**For more in-depth information, see here: [Anti-Hardware Buyers Guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/)**
+**자세한 사항에 대해 알고 싶으시다면: [Anti-Hardware Buyers Guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/)를 참고해주세요**
 
 ::: details CPU Requirements(자세한 CPU 요구사항)
 
@@ -111,7 +111,7 @@ Kernel 요구사항:
 | [Comet Lake](https://en.wikipedia.org/wiki/Comet_Lake_(microprocessor)) | 10.15.4 | ^^ | ^^ | 0x0906E0(S/H)|
 | [Ice Lake](https://en.wikipedia.org/wiki/Ice_Lake_(microprocessor)) | ^^ | ^^ | ^^ | 0x0706E5(U) |
 | [Rocket Lake](https://en.wikipedia.org/wiki/Rocket_Lake) | ^^ | ^^ | Comet Lake CPUID 필요 | 0x0A0671 |
-| [Tiger Lake](https://en.wikipedia.org/wiki/Tiger_Lake_(microprocessor)) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> Untested </span> | 0x0806C0(U) |
+| [Tiger Lake](https://en.wikipedia.org/wiki/Tiger_Lake_(microprocessor)) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> 확인되지 않았습니다 </span> | 0x0806C0(U) |
 
 :::
 
@@ -167,7 +167,7 @@ GPU 지원은 시장에 매우 많은 GPU들이 존재하기에 훨씬 더 복�
 
 **모든 지원가능한 GPU에 대해 보자면 [GPU Buyers Guide](https://dortania.github.io/GPU-Buyers-Guide/)를 참고해주세요**
 
-::: Intel GPU 지원 목록
+::: details intel GPU 지원 목록
 
 | GPU 세대 | 최초 지원 | 최후 지원 | 특이사항 |
 | :--- | :--- | :--- | :--- |
@@ -183,16 +183,16 @@ GPU 지원은 시장에 매우 많은 GPU들이 존재하기에 훨씬 더 복�
 | [Coffee Lake(UHD 6XX)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen9) | 10.13.6 | ^^ | ^^ |
 | [Comet Lake(UHD 6XX)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen9) | 10.15.4 | ^^ | ^^ |
 | [Ice Lake(Gx)](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen11) | 10.15.4 | ^^ |  `-igfxcdc`,`-igfxdvmt` boot-args에 추가해줘야 합니다. |
-| [Tiger Lake(Xe)](https://en.wikipedia.org/wiki/Intel_Xe) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> No drivers available </span> |
-| [Rocket Lake](https://en.wikipedia.org/wiki/Rocket_Lake) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> No drivers available </span> |
+| [Tiger Lake(Xe)](https://en.wikipedia.org/wiki/Intel_Xe) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> 드라이버가 없습니다. </span> |
+| [Rocket Lake](https://en.wikipedia.org/wiki/Rocket_Lake) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> 드라이버가 없습니다. </span> |
 
 :::
 
-::: details AMD GPU Support Chart
+::: details AMD GPU 지원목록
 
-| GPU Generation | Initial support | Last supported version | Notes |
+| GPU 세대 | 최초 지원 | 최후 지원 | 특이사항 |
 | :--- | :--- | :--- | :--- |
-| [X800](https://en.wikipedia.org/wiki/Radeon_X800_series) | 10.3.x | 10.7.5 | Requires 32 bit kernel |
+| [X800](https://en.wikipedia.org/wiki/Radeon_X800_series) | 10.3.x | 10.7.5 | 32비트 커널을 필요로 합니다 |
 | [X1000](https://en.wikipedia.org/wiki/Radeon_X1000_series) | 10.4.x | ^^ | N/A |
 | [TeraScale](https://en.wikipedia.org/wiki/TeraScale_(microarchitecture)) | 10.4.x | 10.13.6 | ^^ |
 | [TeraScale 2/3](https://en.wikipedia.org/wiki/TeraScale_(microarchitecture)) | 10.6.x | ^^ | ^^ |
@@ -206,38 +206,38 @@ GPU 지원은 시장에 매우 많은 GPU들이 존재하기에 훨씬 더 복�
 
 :::
 
-::: details Nvidia GPU Support Chart
+::: details Nvidia GPU 지원목록
 
-| GPU Generation | Initial support | Last supported version | Notes |
+| GPU 세대 | 최초지원 | 최후지원 | 특이사항 |
 | :--- | :--- | :--- | :--- |
-| [GeForce 6](https://en.wikipedia.org/wiki/GeForce_6_series) | 10.2.x | 10.7.5 | Requires 32 bit kernel and [NVCAP patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/nvidia-patching/) |
-| [GeForce 7](https://en.wikipedia.org/wiki/GeForce_7_series) | 10.4.x | ^^ | [Requires NVCAP patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/nvidia-patching/) |
+| [GeForce 6](https://en.wikipedia.org/wiki/GeForce_6_series) | 10.2.x | 10.7.5 | [NVCAP patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/nvidia-patching/)과 32비트 커널이 필요합니다. |
+| [GeForce 7](https://en.wikipedia.org/wiki/GeForce_7_series) | 10.4.x | ^^ | [NVCAP patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/nvidia-patching/)이 필요합니다 |
 | [Tesla](https://en.wikipedia.org/wiki/Tesla_(microarchitecture)) | 10.4.x | 10.13.6 | ^^ |
 | [Tesla v2](https://en.wikipedia.org/wiki/Tesla_(microarchitecture)#Tesla_2.0) | 10.5.x | ^^ | ^^ |
 | [Fermi](https://en.wikipedia.org/wiki/Fermi_(microarchitecture)) | 10.7.x | ^^ | ^^ |
 | [Kepler](https://en.wikipedia.org/wiki/Kepler_(microarchitecture)) | 10.7.x | 11.6.1 | N/A |
 | [Kepler v2](https://en.wikipedia.org/wiki/Kepler_(microarchitecture)) | 10.8.x | ^^ | ^^ |
-| [Maxwell](https://en.wikipedia.org/wiki/Maxwell_(microarchitecture)) | 10.10.x | 10.13.6 | [Requires NVIDIA Web Drivers](https://www.nvidia.com/download/driverResults.aspx/149652/) |
+| [Maxwell](https://en.wikipedia.org/wiki/Maxwell_(microarchitecture)) | 10.10.x | 10.13.6 | [NVIDIA Web Drivers](https://www.nvidia.com/download/driverResults.aspx/149652/)가 필요합니다. |
 | [Pascal](https://en.wikipedia.org/wiki/Pascal_(microarchitecture)) | 10.12.4 | ^^ | ^^ |
-| [Turing](https://en.wikipedia.org/wiki/Turing_(microarchitecture)) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> No drivers available </span> |
+| [Turing](https://en.wikipedia.org/wiki/Turing_(microarchitecture)) | <span style="color:red"> N/A </span> | <span style="color:red"> N/A </span> | <span style="color:red"> 지원하는 드라이버가 없습니다. </span> |
 | [Ampere](https://en.wikipedia.org/wiki/Ampere_(microarchitecture)) | ^^ | ^^ | ^^ |
 
 :::
 
-## Motherboard Support
+## 메인보드 지원
 
-For the most part, all motherboards are supported as long as the CPU is. Previously, B550 boards had issues:
+대부분 CPU가 지원되는 한에서 모든 메인보드는 지원됩니다. AMD B550 보드는 문제가 있었습니다.
 
-* [~~AMD's B550 boards~~](https://en.wikipedia.org/wiki/List_of_AMD_chipsets)
+* [~~AMD's B550 보드~~](https://en.wikipedia.org/wiki/List_of_AMD_chipsets)
 
-However thanks to recent developments, B550 boards are now bootable with the addition of [SSDT-CPUR](https://github.com/naveenkrdy/Misc/blob/master/SSDTs/SSDT-CPUR.dsl). More info will be provided in both [Gathering Files](./ktext.md) and [Zen's config.plist section](./AMD/zen.md)
+그러나 최근의 개발들에 감사하게도,  [SSDT-CPUR](https://github.com/naveenkrdy/Misc/blob/master/SSDTs/SSDT-CPUR.dsl) 를 통해 B550보드에서의 부팅이 가능해졌습니다. 더 자세한 정보는 [Gathering Files](./ktext.md) 과 [Zen's config.plist section](./AMD/zen.md) 에서 후술하겠습니다.
 
-## Storage Support
+## 저장장치 지원
 
-For the most part, all SATA based drives are supported and the majority of NVMe drives as well. There are only a few exceptions:
+대부분 SATA 기반의 저장장치들은 지원되며, 주요한 Nvme 장치 또한 지원됩니다. 다만 소수의 예외들이 있으니 참고바랍니다:
 
-* **Samsung PM981, PM991 and Micron 2200S NVMe SSDs**
-  * These SSDs are not compatible out of the box (causing kernel panics) and therefore require [NVMeFix.kext](https://github.com/acidanthera/NVMeFix/releases) to fix these kernel panics. Note that these drives may still cause boot issues even with NVMeFix.kext.
+* **Samsung PM981, PM991 & Micron 2200S NVMe SSDs**
+  * 이러한 SSD들은 호환되지 않기에 커널패닉을 일으킵니다.[NVMeFix.kext](https://github.com/acidanthera/NVMeFix/releases)를 통해 커널 패닉을 해결할수 있지만, 이를 해결해도 부팅문제를 일으킬수 있다는점 주의하시길 바랍니다.
   * On a related note, Samsung 970 EVO Plus NVMe SSDs also had the same problem but it was fixed in a firmware update; get the update (Windows via Samsung Magician or bootable ISO) [here](https://www.samsung.com/semiconductor/minisite/ssd/download/tools/).
   * Also to note, laptops that use [Intel Optane Memory](https://www.intel.com/content/www/us/en/architecture-and-technology/optane-memory.html) or [Micron 3D XPoint](https://www.micron.com/products/advanced-solutions/3d-xpoint-technology) for HDD acceleration are unsupported in macOS. Some users have reported success in Catalina with even read and write support but we highly recommend removing the drive to prevent any potential boot issues.
   
